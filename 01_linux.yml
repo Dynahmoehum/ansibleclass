@@ -5,7 +5,12 @@
 
   tasks:
   - name: Create file
-    ansible.buitin.file:
+    ansible.builtin.file:
       path: /root/testfile.txt
       state: touch
       mode: '0755'
+
+  - name: Add line in file
+    ansible.builtin.linefile:
+      path: /root/testfile.txt
+      line: Ansible was here...
